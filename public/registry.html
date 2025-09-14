@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registry - Santi & Partner's Wedding</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Georgia", serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 40px 0;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        color: #8b4513;
+        margin-bottom: 10px;
+      }
+
+      .section {
+        background: rgba(255, 255, 255, 0.95);
+        margin: 30px 0;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .registry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .registry-item {
+        text-align: center;
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .registry-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .registry-item h3 {
+        color: #8b4513;
+        margin-bottom: 10px;
+      }
+
+      .registry-item p {
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .btn {
+        background: linear-gradient(135deg, #8b4513, #a0522d);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.2s;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .nav {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .nav a {
+        color: #8b4513;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+
+      .nav a:hover {
+        text-decoration: underline;
+      }
+
+      .wishlist-form {
+        margin-top: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: inherit;
+      }
+
+      .form-group textarea {
+        height: 100px;
+        resize: vertical;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="/rsvp.html">RSVP</a>
+        <a href="/registry.html">Registry</a>
+      </div>
+
+      <div class="header">
+        <h1>Wedding Registry</h1>
+        <p>
+          Your presence is the greatest gift, but if you'd like to help us start
+          our new life together...
+        </p>
+      </div>
+
+      <div class="section">
+        <h2 style="text-align: center; color: #8b4513; margin-bottom: 20px">
+          Our Wishlist
+        </h2>
+
+        <div class="registry-grid">
+          <div class="registry-item">
+            <h3>Kitchen Essentials</h3>
+            <p>Help us cook up some love in our new kitchen!</p>
+            <a href="#" class="btn">View Kitchen Items</a>
+          </div>
+
+          <div class="registry-item">
+            <h3>Home Decor</h3>
+            <p>Make our house a home with beautiful decorations.</p>
+            <a href="#" class="btn">View Home Items</a>
+          </div>
+
+          <div class="registry-item">
+            <h3>Honeymoon Fund</h3>
+            <p>Help us create unforgettable memories on our honeymoon!</p>
+            <a href="#" class="btn">Contribute to Honeymoon</a>
+          </div>
+
+          <div class="registry-item">
+            <h3>Date Night Fund</h3>
+            <p>Support our future date nights and adventures together.</p>
+            <a href="#" class="btn">Contribute to Date Nights</a>
+          </div>
+        </div>
+
+        <div class="wishlist-form">
+          <h3 style="color: #8b4513; margin-bottom: 20px">Suggest a Gift</h3>
+          <form id="suggestionForm">
+            <div class="form-group">
+              <label for="suggestion">Gift Suggestion</label>
+              <textarea
+                id="suggestion"
+                name="suggestion"
+                placeholder="Tell us about a gift you think we'd love..."
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="suggester">Your Name</label>
+              <input
+                type="text"
+                id="suggester"
+                name="suggester"
+                placeholder="Your name"
+              />
+            </div>
+            <button type="submit" class="btn">Submit Suggestion</button>
+          </form>
+          <div id="suggestionMessage" style="margin-top: 15px"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("suggestionForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(e.target);
+          const suggestion = formData.get("suggestion");
+          const suggester = formData.get("suggester");
+
+          if (!suggestion.trim()) {
+            alert("Please enter a gift suggestion!");
+            return;
+          }
+
+          // For now, just show a success message
+          // In a real implementation, you'd send this to your API
+          const messageDiv = document.getElementById("suggestionMessage");
+          messageDiv.innerHTML = `
+                <div style="background: #e8f5e8; color: #2e7d32; padding: 10px; border-radius: 5px;">
+                    Thank you for your suggestion, ${
+                      suggester || "friend"
+                    }! We'll definitely consider it.
+                </div>
+            `;
+
+          e.target.reset();
+        });
+    </script>
+  </body>
+</html>

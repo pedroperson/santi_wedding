@@ -1,0 +1,14 @@
+# Image Placeholders
+
+Replace these files with your actual wedding images:
+
+- couple.jpg (600x300px recommended) - Main hero image
+- ceremony.jpg (400x300px recommended) - Ceremony location
+- reception.jpg (400x300px recommended) - Reception venue
+- gallery1.jpg, gallery2.jpg, etc. - Additional photos
+
+You can also add:
+- favicon.ico - Website icon
+- background.jpg - Background image (optional)
+
+All images should be optimized for web (compressed, appropriate file sizes).
