@@ -25,7 +25,7 @@ A beautiful, simple wedding website built with static HTML, Vercel serverless fu
 ### 1. Clone and Install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/pedroperson/santi_wedding.git
 cd santiwedding
 npm install
 ```
